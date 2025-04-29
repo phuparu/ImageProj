@@ -292,6 +292,18 @@ class TomatoLeafPreprocessor:
         
         return results
     
+    # ฟังก์ชันสำหรับการทำ preprocessing สำหรับ CNN
+    def preprocess_for_cnn(self, image):
+        """
+        ทำ preprocessing ขั้นพื้นฐานเพื่อเตรียมภาพสำหรับ CNN
+        """
+        clahe_result = self.apply_clahe(image)
+        _, segmented = self.segment_leaf(clahe_result)
+        cropped = self.crop_to_content(segmented)
+        resized = self.resize_image(cropped)
+        normalized = self.normalize_image(resized)
+        return normalized
+    
     def process_dataset(self, input_dir, output_dir, apply_augmentation=False, augmentation_factor=1):
         """
         ทำ preprocessing กับชุดข้อมูลทั้งหมด
@@ -517,6 +529,7 @@ def visualize_preprocessing_results(image_path, output_dir=None, input_size=(224
             fig.savefig(os.path.join(output_dir, 'augmentation_visualization.png'))
             
         plt.show()
+
 
 # ตัวอย่างการใช้งาน
 if __name__ == "__main__":
