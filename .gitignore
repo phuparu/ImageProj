@@ -4,4 +4,10 @@ tomatoleaf
 tomatoleaf.zip
 
 preprocessed_data
+X_train.npy
+X_val.npy
+y_train.npy
+y_val.npy
 
+tomato_leaf_cnn_model.h5
+resnet_tomato_model.h5
