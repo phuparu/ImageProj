@@ -12,7 +12,7 @@ X_val = np.load('./preprocessed_cnn/X_val.npy')
 y_val = np.load('./preprocessed_cnn/y_val.npy')
 
 # ✅ โหลดโมเดลจากไฟล์ .h5
-model = load_model('tomato_leaf_cnn_model.h5')
+model = load_model('tomato_leaf_cnn_model.keras')
 
 # ✅ สร้าง LabelEncoder และแปลง label เป็น one-hot
 le = LabelEncoder()
@@ -36,9 +36,9 @@ report = classification_report(
     digits=2                # ทศนิยม 2 ตำแหน่ง
 )
 print(report)
-with open("classification_report.txt", "w", encoding="utf-8") as f:
+with open("classification_report_1.txt", "w", encoding="utf-8") as f:
     f.write(report)
-print("✅ บันทึกผลไว้ใน classification_report.txt แล้ว")
+print("✅ บันทึกผลไว้ใน classification_report_1.txt แล้ว")
 
 # ✅ Confusion Matrix
 cm = confusion_matrix(y_val_labels, y_pred_labels)
