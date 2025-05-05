@@ -12,5 +12,6 @@ y_train.npy
 y_val.npy
 
 tomato_leaf_cnn_model.h5
+tomato_leaf_cnn_model.keras
 resnet_tomato_model.h5
 resnet50_finetune_aug_weighted.h5
