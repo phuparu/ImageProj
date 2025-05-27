@@ -90,5 +90,5 @@ def predict_new_image(image_path, model, label_encoder):
         print(f"❌ Error: {e}")
 
 # ตัวอย่างการพยากรณ์ภาพใหม่
-image_path = "C:/Users/User/Desktop/ImageProcessing/Project/ImageProj/data/tomatoleaf/tomato/val/Tomato___Tomato_mosaic_virus/0a7cc59f-b2b0-4201-9c4a-d91eca5c03a3___PSU_CG 2230.JPG"
+image_path = "C:/Users/User/Desktop/ImageProcessing/Project/ImageProj/test/bacterial-spot_tomatoes_featured.jpg"
 predict_new_image(image_path, model, le)
